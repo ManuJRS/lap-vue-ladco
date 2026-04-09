@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="max-w-7xl mx-auto py-32 px-6">
     <!-- Article Content -->
@@ -240,7 +244,3 @@
     </article>
   </div>
 </template>
-
-<script setup lang="ts">
-import { RouterLink } from 'vue-router'
-</script>
