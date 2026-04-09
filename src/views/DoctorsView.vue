@@ -1,6 +1,71 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import gsap from 'gsap'
+
+const heroSectionRef = ref<HTMLElement | null>(null)
+const doctorsTitleRef = ref<HTMLElement | null>(null)
+
+let heroSectionObserver: IntersectionObserver | null = null
+
+function hideDoctorsTitleUntilViewport() {
+  if (!doctorsTitleRef.value) return
+  gsap.set(doctorsTitleRef.value, {
+    autoAlpha: 0,
+    filter: 'blur(15px)',
+    scale: 0.9,
+  })
+}
+
+function runDoctorsTitleReveal() {
+  if (!doctorsTitleRef.value) return
+  gsap.fromTo(
+    doctorsTitleRef.value,
+    {
+      autoAlpha: 0,
+      filter: 'blur(15px)',
+      scale: 0.9,
+    },
+    {
+      autoAlpha: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 2,
+      ease: 'power2.out',
+    },
+  )
+}
+
+onMounted(async () => {
+  await nextTick()
+  hideDoctorsTitleUntilViewport()
+
+  const section = heroSectionRef.value
+  if (!section) return
+
+  heroSectionObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (!entry?.isIntersecting) return
+      runDoctorsTitleReveal()
+      heroSectionObserver?.unobserve(section)
+    },
+    {
+      root: null,
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    },
+  )
+  heroSectionObserver.observe(section)
+})
+
+onUnmounted(() => {
+  heroSectionObserver?.disconnect()
+  heroSectionObserver = null
+})
+</script>
 <template>
   <div>
-    <section class="relative overflow-hidden bg-surface py-20 lg:py-32">
+    <section ref="heroSectionRef" class="relative overflow-hidden bg-surface py-25 lg:py-32">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 items-center gap-12 px-6">
         <div class="z-10">
           <span
@@ -8,7 +73,8 @@
             >Excelencia Médica</span
           >
           <h1
-            class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-6"
+            ref="doctorsTitleRef"
+            class="invisible text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] tracking-tight mb-6"
           >
             Conoce a Nuestros Especialistas
           </h1>
@@ -204,7 +270,3 @@
     </section>
   </div>
 </template>
-
-<script setup lang="ts">
-// Vue Component
-</script>

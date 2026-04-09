@@ -1,6 +1,68 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { useMapBranches, type Branch } from '@/composables/useMapBranches'
+import gsap from 'gsap'
 
+const sectionRef = ref<HTMLElement | null>(null)
+const textRef = ref<HTMLElement | null>(null)
+
+let sectionObserver: IntersectionObserver | null = null
+
+function hideTitleUntilViewport() {
+  if (!textRef.value) return
+  gsap.set(textRef.value, {
+    autoAlpha: 0,
+    filter: 'blur(15px)',
+    scale: 0.9,
+  })
+}
+
+function runTitleReveal() {
+  if (!textRef.value) return
+  gsap.fromTo(
+    textRef.value,
+    {
+      autoAlpha: 0,
+      filter: 'blur(15px)',
+      scale: 0.9,
+    },
+    {
+      autoAlpha: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 2,
+      ease: 'power2.out',
+    },
+  )
+}
+
+onMounted(async () => {
+  await nextTick()
+  hideTitleUntilViewport()
+
+  const section = sectionRef.value
+  if (!section) return
+
+  sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (!entry?.isIntersecting) return
+      runTitleReveal()
+      sectionObserver?.unobserve(section)
+    },
+    {
+      root: null,
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    },
+  )
+  sectionObserver.observe(section)
+})
+
+onUnmounted(() => {
+  sectionObserver?.disconnect()
+  sectionObserver = null
+})
 const branchData: Branch[] = [
   {
     id: '1',
@@ -25,7 +87,7 @@ const { branches, activeBranchId, activeBranch, selectBranch } = useMapBranches(
 </script>
 
 <template>
-  <section class="relative overflow-hidden py-24 px-6 bg-[#eff7f9]">
+  <section ref="sectionRef" class="relative overflow-hidden py-24 px-6 bg-[#eff7f9]">
     <div
       class="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
       aria-hidden="true"
@@ -51,7 +113,12 @@ const { branches, activeBranchId, activeBranch, selectBranch } = useMapBranches(
             class="accent-line-blink bg-green-500 from-primary to-secondary w-10 h-1 rounded-full mb-2"
             aria-hidden="true"
           ></div>
-          <h2 class="font-headline text-4xl font-bold text-on-surface mb-2">Laboratorio Ladco</h2>
+          <h2
+            ref="textRef"
+            class="invisible font-headline text-4xl font-bold text-on-surface mb-2"
+          >
+            Laboratorio Ladco
+          </h2>
           <p class="text-on-surface-variant font-label text-sm tracking-wide mb-8">
             Sucursales en Mérida
           </p>
