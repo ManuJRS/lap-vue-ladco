@@ -1,8 +1,24 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 import { useScrollHideNavbar } from '@/composables/useScrollHideNavbar'
-import { RouterLink } from 'vue-router'
 
 const { isHidden } = useScrollHideNavbar(80)
+
+const route = useRoute()
+
+const mobileHomeFilled = computed(() => route.path === '/')
+const mobileDoctorsFilled = computed(() => route.path.startsWith('/doctors'))
+const mobileResultsFilled = computed(() => route.path.startsWith('/results'))
+const mobileBlogFilled = computed(
+  () => route.path === '/blog' || route.path.startsWith('/blog/'),
+)
+
+function mobileIconFill(filled: boolean) {
+  return {
+    fontVariationSettings: filled ? "'FILL' 1" : "'FILL' 0",
+  }
+}
 </script>
 
 <template>
@@ -70,7 +86,7 @@ const { isHidden } = useScrollHideNavbar(80)
       class="md:hidden fixed bottom-6 left-6 right-6 z-50 pointer-events-none opacity-100 scale-100 transition-all duration-300"
     >
       <div
-        class="bg-white/90 backdrop-blur-xl border border-white shadow-2xl rounded-full px-6 py-4 flex justify-between items-center pointer-events-auto"
+        class="bg-white/90 backdrop-blur-xl border border-white shadow-2xl rounded-full px-6 py-2 flex justify-between items-center pointer-events-auto"
       >
         <RouterLink
           to="/"
@@ -78,7 +94,9 @@ const { isHidden } = useScrollHideNavbar(80)
           active-class="text-[#51c3c1]"
           exact-active-class="text-[#51c3c1]"
         >
-          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1"
+          <span
+            class="material-symbols-outlined transition-[font-variation-settings]"
+            :style="mobileIconFill(mobileHomeFilled)"
             >home</span
           >
           <span class="text-[10px] font-bold">Inicio</span>
@@ -88,7 +106,9 @@ const { isHidden } = useScrollHideNavbar(80)
           class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors focus:outline-none"
           active-class="text-[#51c3c1]"
         >
-          <span class="material-symbols-outlined hover:text-primary transition-colors"
+          <span
+            class="material-symbols-outlined transition-colors"
+            :style="mobileIconFill(mobileDoctorsFilled)"
             >medical_services</span
           >
           <span class="text-[10px] font-bold">Doctores</span>
@@ -117,7 +137,9 @@ const { isHidden } = useScrollHideNavbar(80)
           class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors focus:outline-none"
           active-class="text-[#51c3c1]"
         >
-          <span class="material-symbols-outlined hover:text-primary transition-colors"
+          <span
+            class="material-symbols-outlined transition-colors"
+            :style="mobileIconFill(mobileResultsFilled)"
             >assignment_turned_in</span
           >
           <span class="text-[10px] font-bold">Resultados</span>
@@ -127,7 +149,9 @@ const { isHidden } = useScrollHideNavbar(80)
           class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors focus:outline-none"
           active-class="text-[#51c3c1]"
         >
-          <span class="material-symbols-outlined hover:text-primary transition-colors"
+          <span
+            class="material-symbols-outlined transition-colors"
+            :style="mobileIconFill(mobileBlogFilled)"
             >article</span
           >
           <span class="text-[10px] font-bold">Blog</span>
