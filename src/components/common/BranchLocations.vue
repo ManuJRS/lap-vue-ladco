@@ -70,7 +70,7 @@ const branchData: Branch[] = [
     address: 'Calle 42 sur, x 103 y 103-A, Colonia Santa Rosa, número 679 y 681., Mérida, Mexico',
     hours: ['Lunes a viernes: 7:00 a.m. – 6:00 p.m.', 'Sábado: 7:00 a.m. – 2:00 p.m.'],
     mapUrl:
-      'https://www.google.com/maps?q=Calle+42+sur%2C+x+103+y+103-A%2C+Colonia+Santa+Rosa%2C+679+y+681%2C+M%C3%A9rida%2C+Yucat%C3%A1n%2C+Mexico&hl=es&z=16&output=embed',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.190685201971!2d-89.61738645394026!3d20.94485614812085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5671053a447a9f%3A0xf48fd53ef063f577!2sLadco%20Laboratorio%20De%20Diagn%C3%B3stico%20Cl%C3%ADnico!5e0!3m2!1ses!2smx!4v1775772896586!5m2!1ses!2smx',
   },
   {
     id: '2',
