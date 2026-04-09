@@ -1,1 +1,57 @@
 @import 'tailwindcss';
+@config "../../tailwind.config.js";
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+    vertical-align: middle;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+  }
+
+  .signature-gradient {
+    background: linear-gradient(135deg, #00478d 0%, #005eb8 100%);
+  }
+
+  .asymmetric-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  .promo-carousel {
+    overflow: hidden;
+    width: min(100%, 620px);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .promo-carousel-track {
+    width: max-content;
+    animation: promo-carousel-right 16s linear infinite;
+  }
+
+  .promo-carousel-item {
+    white-space: nowrap;
+  }
+
+  .accent-line-blink {
+    animation: accent-line-blink 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes promo-carousel-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes accent-line-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}

@@ -1,0 +1,1586 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Clinical Sanctuary | Excellence in Ethereal Care</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'on-primary-container': '#c8daff',
+              'secondary-container': '#5dfd8a',
+              'on-primary-fixed': '#001b3d',
+              'inverse-surface': '#2d3133',
+              'surface-container-low': '#f2f4f6',
+              'surface-variant': '#e0e3e5',
+              'surface-tint': '#005db6',
+              'on-tertiary-container': '#73ecf6',
+              'primary-fixed-dim': '#a9c7ff',
+              'on-tertiary-fixed': '#002022',
+              'surface-container-lowest': '#ffffff',
+              background: '#f7f9fb',
+              'on-primary': '#ffffff',
+              'on-secondary-container': '#007232',
+              'tertiary-fixed': '#7df4ff',
+              'inverse-primary': '#a9c7ff',
+              'error-container': '#ffdad6',
+              'inverse-on-surface': '#eff1f3',
+              'surface-dim': '#d8dadc',
+              'on-secondary': '#ffffff',
+              'surface-bright': '#f7f9fb',
+              'surface-container-high': '#e6e8ea',
+              'on-background': '#191c1e',
+              outline: '#727783',
+              'surface-container': '#eceef0',
+              tertiary: '#005055',
+              'on-tertiary': '#ffffff',
+              'on-surface': '#191c1e',
+              'tertiary-container': '#006a71',
+              'tertiary-fixed-dim': '#5dd8e2',
+              'on-primary-fixed-variant': '#00468c',
+              primary: '#00478d',
+              'on-tertiary-fixed-variant': '#004f54',
+              'outline-variant': '#c2c6d4',
+              secondary: '#006d2f',
+              'primary-container': '#005eb8',
+              'surface-container-highest': '#e0e3e5',
+              'on-error-container': '#93000a',
+              'on-secondary-fixed-variant': '#005322',
+              'primary-fixed': '#d6e3ff',
+              'on-secondary-fixed': '#002109',
+              surface: '#f7f9fb',
+              'on-surface-variant': '#424752',
+              error: '#ba1a1a',
+              'on-error': '#ffffff',
+              'secondary-fixed': '#66ff8e',
+              'secondary-fixed-dim': '#3de273',
+            },
+            fontFamily: {
+              headline: ['Manrope'],
+              body: ['Inter'],
+              label: ['Inter'],
+            },
+            borderRadius: { DEFAULT: '0.5rem', lg: '0.5rem', xl: '0.75rem', full: '9999px' },
+            maxWidth: {
+              '8xl': '96rem',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        vertical-align: middle;
+      }
+
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+
+      .signature-gradient {
+        background: linear-gradient(135deg, #00478d 0%, #005eb8 100%);
+      }
+
+      .asymmetric-shape {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+
+      @keyframes promo-carousel-right {
+        0% {
+          transform: translateX(-50%);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .promo-carousel {
+        overflow: hidden;
+        width: min(100%, 620px);
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 8%,
+          black 92%,
+          transparent 100%
+        );
+      }
+
+      .promo-carousel-track {
+        width: max-content;
+        animation: promo-carousel-right 16s linear infinite;
+      }
+
+      .promo-carousel-item {
+        white-space: nowrap;
+      }
+
+      @keyframes accent-line-blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0.25;
+        }
+      }
+
+      .accent-line-blink {
+        animation: accent-line-blink 1.4s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <!-- TopNavBar Desktop -->
+    <nav class="fixed top-0 w-full z-50 bg-[#366a66]/90 backdrop-blur-sm shadow-sm">
+      <div class="flex items-center justify-center md:justify-between px-6 py-4 max-w-7xl mx-auto">
+        <a
+          href="#"
+          class="inline-flex items-center rounded-lg px-3 py-2"
+          aria-label="Ladco — Inicio"
+        >
+          <img
+            src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Ladco-Logotipo-blanco.png"
+            alt="Ladco"
+            class="h-8 w-auto md:h-9"
+            width="160"
+            height="40"
+          />
+        </a>
+        <div class="hidden md:flex items-center gap-4 lg:gap-6 flex-wrap justify-center max-w-2xl">
+          <a
+            class="text-white font-semibold border-b-2 border-white transition-colors uppercase tracking-wider text-[11px] font-label"
+            href="/"
+            >Inicio</a
+          >
+          <a
+            class="text-white/90 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-label"
+            href="/doctores.html"
+            >Doctores</a
+          >
+          <a
+            class="text-white/90 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-label"
+            href="#"
+            >Resultados</a
+          >
+          <a
+            class="text-white/90 hover:text-white transition-colors uppercase tracking-wider text-[11px] font-label"
+            href="#"
+            >Blog</a
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-3 md:gap-4">
+          <button
+            type="button"
+            class="border-2 border-white text-white bg-transparent px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/15 transition-all active:scale-95"
+          >
+            Agendar cita
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- Hero: carrusel de promociones -->
+      <section class="relative min-h-[600px] flex items-center justify-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <iframe
+            class="absolute top-1/2 left-1/2 h-[56.25vw] min-h-full min-w-full w-[177.77vh] -translate-x-1/2 -translate-y-1/2 border-0"
+            src="https://player.vimeo.com/video/1174197133?muted=1&amp;autoplay=1&amp;loop=1&amp;background=1&amp;app_id=122963"
+            title="Video de fondo"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <div
+          class="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-black/55 via-black/45 to-black/65"
+        ></div>
+        <div class="max-w-4xl mx-auto w-full text-center z-10 px-2">
+          <span
+            class="text-white/80 font-label text-xs uppercase tracking-[0.2em] mb-4 block drop-shadow-sm"
+            >Laboratorio de Diagnóstico Clínico
+          </span>
+          <h1
+            class="font-headline text-5xl md:text-7xl font-extrabold text-[#51c3c1] leading-tight mb-6 drop-shadow-md"
+          >
+            Cuida tu salud<br />
+            <span class="text-white">Eres importante</span>
+          </h1>
+          <p
+            class="text-white/85 font-label text-sm tracking-[0.12em] mb-4 flex items-center justify-center gap-1.5 drop-shadow-sm"
+          >
+            <span class="material-symbols-outlined text-base" aria-hidden="true">location_on</span>
+            Mérida, Yucatán, México
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 border-2 border-white/20 text-white bg-[#25D366] px-6 py-2.5 rounded-lg font-semibold text-sm shadow-lg hover:bg-[#20bd5a] transition-all active:scale-95"
+            >
+              <span
+                class="material-symbols-outlined text-[20px]"
+                style="font-variation-settings: 'FILL' 1"
+                aria-hidden="true"
+                >chat</span
+              >
+              WhatsApp
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Inicia Seccion de flyers -->
+      <section class="relative w-full overflow-hidden py-10 md:py-16">
+        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-8 sm:mb-10 md:mb-12">
+            <h2
+              class="mb-3 font-headline text-4xl font-extrabold text-[#51c3c1] tracking-tight sm:mb-4 sm:text-4xl md:text-5xl"
+            >
+              Promociones especiales
+            </h2>
+            <p class="text-base text-on-surface-variant sm:text-lg">
+              Cuidamos tu salud y tu economía con nuestros paquetes de temporada.
+            </p>
+          </div>
+          <div class="relative overflow-hidden rounded-2xl shadow-sm" id="custom-carousel">
+            <div
+              id="carousel-track"
+              class="relative z-0 flex transition-transform duration-500 ease-in-out"
+            >
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Check-up-Ginecologico-2.png"
+                      alt="Slide 1"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Perfil-Duo.png"
+                      alt="Slide 2"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-1.png"
+                      alt="Slide 3"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-2.png"
+                      alt="Slide 3"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-3.png"
+                      alt="Slide 3"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-none w-full md:w-1/3 flex items-center justify-center">
+                <div
+                  class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]"
+                >
+                  <div class="aspect-[1080/1350] overflow-hidden">
+                    <img
+                      src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-4.png"
+                      alt="Slide 5"
+                      class="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flecha izquierda -->
+            <button
+              id="prev-btn"
+              type="button"
+              class="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-700 shadow-md backdrop-blur transition hover:bg-white md:left-5 md:h-12 md:w-12"
+              aria-label="Anterior"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 md:h-6 md:w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <!-- Flecha derecha -->
+            <button
+              id="next-btn"
+              type="button"
+              class="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 text-slate-700 shadow-md backdrop-blur transition hover:bg-white md:right-5 md:h-12 md:w-12"
+              aria-label="Siguiente"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 md:h-6 md:w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <!-- Dots -->
+            <div
+              id="carousel-dots"
+              class="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2"
+            ></div>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center gap-3 sm:mt-8">
+            <a
+              href="https://wa.me/529991916081?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20promociones%20especiales"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-[44px] items-center justify-center rounded-lg border-2 border-[#51c3c1] bg-transparent px-5 py-2.5 text-sm font-semibold text-[#51c3c1] transition hover:bg-[#51c3c1]/10 active:scale-[0.98] sm:px-6 sm:text-base"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Finaliza Seccion de flyers -->
+      <section class="relative overflow-hidden py-24 px-6 bg-[#eff7f9]">
+        <div
+          class="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
+          aria-hidden="true"
+        >
+          <img
+            src="ecg_heart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+            class="absolute -right-2 -top-2 sm:-right-3 sm:-top-3 md:-right-[10rem] md:-top-4 w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:h-[30rem] lg:w-[30rem] object-contain object-right object-top opacity-[0.70]"
+            width="900"
+            height="900"
+          />
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div class="lg:col-span-5">
+              <span
+                class="text-on-surface-variant font-label text-xs uppercase tracking-[0.2em] mb-2 block"
+                >Abierto</span
+              >
+              <div
+                class="accent-line-blink bg-green-500 from-primary to-secondary w-10 h-1 rounded-full mb-2"
+                aria-hidden="true"
+              ></div>
+              <h2 class="font-headline text-4xl font-bold text-on-surface mb-2">
+                Laboratorio Ladco
+              </h2>
+              <p class="text-on-surface-variant font-label text-sm tracking-wide mb-8">
+                Sucursales en Mérida
+              </p>
+              <div
+                class="space-y-6"
+                role="group"
+                aria-label="Seleccionar sucursal para ver el mapa"
+              >
+                <!-- Sucursal 1 -->
+                <article
+                  class="branch-location-card p-6 rounded-xl bg-surface-container-low border-2 cursor-pointer transition-all outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#51c3c1] ring-2 ring-[#51c3c1] border-[#51c3c1] shadow-md"
+                  tabindex="0"
+                  role="button"
+                  aria-pressed="true"
+                  data-map-url="https://www.google.com/maps?q=Calle+42+sur%2C+x+103+y+103-A%2C+Colonia+Santa+Rosa%2C+679+y+681%2C+M%C3%A9rida%2C+Yucat%C3%A1n%2C+Mexico&amp;hl=es&amp;z=16&amp;output=embed"
+                  data-map-title="Mapa — Sucursal Santa Rosa, Mérida"
+                  data-map-heading="Santa Rosa"
+                >
+                  <h3 class="font-headline text-lg font-bold text-on-surface mb-3">
+                    Sucursal Santa Rosa
+                  </h3>
+                  <p class="text-on-surface-variant text-sm flex items-start gap-2 mb-4">
+                    <span
+                      class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span
+                      >Calle 42 sur, x 103 y 103-A, Colonia Santa Rosa, número 679 y 681., Mérida,
+                      Mexico</span
+                    >
+                  </p>
+                  <div class="flex items-start gap-2 text-sm text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5"
+                      aria-hidden="true"
+                      >calendar_month</span
+                    >
+                    <div>
+                      <p class="font-headline font-bold text-on-surface text-sm mb-1">
+                        Horarios de atención
+                      </p>
+                      <p>Lunes a viernes: 7:00 a.m. – 6:00 p.m.</p>
+                      <p>Sábado: 7:00 a.m. – 2:00 p.m.</p>
+                    </div>
+                  </div>
+                </article>
+                <!-- Sucursal 2 — edita data-map-url con Insertar mapa de Google -->
+                <article
+                  class="branch-location-card p-6 rounded-xl bg-surface-container-lowest border-2 border-outline-variant/10 transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#51c3c1] hover:shadow-sm"
+                  tabindex="0"
+                  role="button"
+                  aria-pressed="false"
+                  data-map-url="https://www.google.com/maps?q=M%C3%A9rida%2C+Yucat%C3%A1n%2C+Mexico&amp;hl=es&amp;z=12&amp;output=embed"
+                  data-map-title="Mapa — segunda sucursal Laboratorio Ladco"
+                  data-map-heading="segunda sucursal"
+                >
+                  <h3 class="font-headline text-lg font-bold text-on-surface mb-3">
+                    Segunda sucursal
+                  </h3>
+                  <p class="text-on-surface-variant text-sm flex items-start gap-2 mb-4">
+                    <span
+                      class="material-symbols-outlined text-primary text-base shrink-0 mt-0.5"
+                      aria-hidden="true"
+                      >location_on</span
+                    >
+                    <span
+                      >Indica aquí la dirección completa de tu segunda sucursal (calle, número,
+                      colonia, ciudad).</span
+                    >
+                  </p>
+                  <div class="flex items-start gap-2 text-sm text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5"
+                      aria-hidden="true"
+                      >calendar_month</span
+                    >
+                    <div>
+                      <p class="font-headline font-bold text-on-surface text-sm mb-1">
+                        Horarios de atención
+                      </p>
+                      <p>Lunes a viernes: 7:00 a.m. – 6:00 p.m.</p>
+                      <p>Sábado: 7:00 a.m. – 2:00 p.m.</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="lg:col-span-7">
+              <p
+                class="font-label text-xs uppercase tracking-[0.15em] text-on-surface-variant mb-2"
+              >
+                Mapa —
+                <span id="branch-map-name">Santa Rosa</span>
+              </p>
+              <div
+                class="min-h-[320px] lg:min-h-[500px] w-full rounded-2xl overflow-hidden relative shadow-inner bg-surface-container-high"
+              >
+                <iframe
+                  id="branch-map-iframe"
+                  class="absolute inset-0 h-full w-full border-0"
+                  title="Mapa — Sucursal Santa Rosa, Mérida"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                  src="https://www.google.com/maps?q=Calle+42+sur%2C+x+103+y+103-A%2C+Colonia+Santa+Rosa%2C+679+y+681%2C+M%C3%A9rida%2C+Yucat%C3%A1n%2C+Mexico&amp;hl=es&amp;z=16&amp;output=embed"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Promotions Section (Bento Grid / Flyer Style) -->
+      <section class="relative overflow-hidden py-24 bg-surface-container-low px-6">
+        <div
+          class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+          aria-hidden="true"
+        >
+          <img
+            src="barefoot_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+            class="absolute -top-[-7rem] -right-2 md:top-auto md:-bottom-1 md:-right-[-10rem] w-64 h-64 sm:w-80 sm:h-80 md:w-[22rem] md:h-[22rem] lg:w-[28rem] lg:h-[28rem] origin-top-right -rotate-[-30deg] object-contain object-right object-top md:origin-bottom-right md:object-bottom opacity-[0.70]"
+            width="448"
+            height="448"
+          />
+        </div>
+        <header class="relative z-10 max-w-6xl mx-auto mb-16">
+          <span
+            class="text-sm font-semibold text-on-surface-variant tracking-[0.1em] uppercase block mb-2 font-label"
+            >Diagnostic Excellence</span
+          >
+          <h1
+            class="md:text-5xl text-4xl font-extrabold text-[#51c3c1] font-headline tracking-tight mb-4"
+          >
+            Realizamos más de 80 estudios clínicos
+          </h1>
+          <p class="text-lg text-on-surface-variant max-w-2xl font-body leading-relaxed">
+            Utilizamos tecnología de vanguardia y contamos con personal altamente calificado para
+            brindarte resultados precisos y confiables en el menor tiempo posible.
+          </p>
+        </header>
+        <!-- Grid of Studies -->
+        <div
+          class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Card: Perfil Bioquímico -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]">biotech</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">
+                  Perfil Bioquímico
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Análisis integral de funciones metabólicas y niveles de glucosa, colesterol y
+                  triglicéridos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Prueba Prostática -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]">male</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">
+                  Prueba Prostática
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Detección oportuna de antígeno prostático específico para el cuidado de la salud
+                  masculina.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Perfil Preoperatorio -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]">monitor_heart</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">
+                  Perfil Preoperatorio
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Evaluación clínica completa para garantizar la seguridad del paciente antes de
+                  cualquier intervención.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Detección de Dengue -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]"
+                  >magnification_small</span
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">
+                  Detección de Dengue
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Pruebas rápidas y moleculares para el diagnóstico preciso de infecciones por virus
+                  del Dengue.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Tamiz Gold -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]"
+                  >workspace_premium</span
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">Tamiz Gold</h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Nuestra evaluación más completa de biomarcadores para un monitoreo de salud
+                  excepcional.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card: Perfil Prenatal -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.06)] hover:shadow-lg transition-all border-none group cursor-pointer relative overflow-hidden"
+          >
+            <div class="flex flex-col gap-6">
+              <div
+                class="w-14 h-14 rounded-lg bg-[#eff7f9] flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl text-[#51c3c1]"
+                  >pregnant_woman</span
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-on-surface mb-2 font-headline">
+                  Perfil Prenatal
+                </h3>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  Seguimiento clínico especializado para el bienestar de la madre y el desarrollo
+                  del bebé.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Datos secction -->
+      <section class="py-24 bg-[#eff7f9]">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="grid md:grid-cols-1 gap-6">
+            <div
+              class="relative overflow-hidden md:col-span-8 bg-surface-container-lowest p-5 md:p-10 rounded-xl flex flex-col justify-between group hover:shadow-lg transition-all border border-outline-variant/10"
+            >
+              <div class="relative z-10">
+                <div
+                  class="mb-6 inline-flex items-center rounded-xl bg-[#51c3c1] px-4 py-2 shadow-sm"
+                >
+                  <img
+                    src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Ladco-Logotipo-blanco.png"
+                    alt="Ladco"
+                    class="h-10 w-auto"
+                    width="160"
+                    height="40"
+                  />
+                </div>
+                <h3 class="font-headline text-3xl font-bold mb-4">Ladco Diagnóstico Clínico</h3>
+                <p class="text-on-surface-variant text-lg leading-relaxed max-w-6xl">
+                  Somos un laboratorio clínico comprometido con tu salud y bienestar. Brindamos un
+                  servicio confiable, profesional y humano, enfocado en ofrecer resultados precisos
+                  para ayudarte a tomar decisiones informadas sobre tu salud.
+                </p>
+                <p class="text-on-surface font-semibold text-lg leading-snug mt-8 mb-3 max-w-6xl">
+                  Cuidamos tu salud para que también sea accesible.
+                </p>
+                <p class="text-on-surface-variant text-base leading-relaxed mb-4 max-w-6xl">
+                  Consulta nuestras promociones mensuales en estudios de laboratorio:
+                </p>
+                <ul class="space-y-2.5 text-on-surface-variant text-base max-w-6xl" role="list">
+                  <li class="flex gap-2.5 items-start">
+                    <span
+                      class="material-symbols-outlined shrink-0 text-[#51c3c1] text-xl leading-none mt-0.5"
+                      style="font-variation-settings: 'FILL' 1"
+                      aria-hidden="true"
+                      >check_circle</span
+                    >
+                    <span>Paquetes de chequeo general</span>
+                  </li>
+                  <li class="flex gap-2.5 items-start">
+                    <span
+                      class="material-symbols-outlined shrink-0 text-[#51c3c1] text-xl leading-none mt-0.5"
+                      style="font-variation-settings: 'FILL' 1"
+                      aria-hidden="true"
+                      >check_circle</span
+                    >
+                    <span>Descuentos por temporada</span>
+                  </li>
+                  <li class="flex gap-2.5 items-start">
+                    <span
+                      class="material-symbols-outlined shrink-0 text-[#51c3c1] text-xl leading-none mt-0.5"
+                      style="font-variation-settings: 'FILL' 1"
+                      aria-hidden="true"
+                      >check_circle</span
+                    >
+                    <span>Promociones para empresas y convenios</span>
+                  </li>
+                </ul>
+              </div>
+              <span
+                class="material-symbols-outlined pointer-events-none absolute -bottom-10 -right-10 z-0 text-[200px] leading-none text-primary/15 select-none"
+                data-icon="visibility"
+                aria-hidden="true"
+                >visibility</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 pt-16">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
+            <div class="col-span-2 row-span-2 rounded-xl overflow-hidden group relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="wide shot of a clean modern laboratory interior with rows of scientific analyzers and digital displays"
+                src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/hero-img-Ladco-2.jpg"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
+              ></div>
+              <div class="absolute bottom-6 left-6 text-white">
+                <p class="font-bold text-xl font-headline">Unidad de Análisis Automatizado</p>
+                <p class="text-sm opacity-90">Eficiencia y precisión sin error humano.</p>
+              </div>
+            </div>
+            <div class="col-span-1 rounded-xl overflow-hidden group">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="close-up of advanced optical microscope in a bright laboratory setting"
+                src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/banner-ladco.jpg"
+              />
+            </div>
+            <div class="col-span-1 rounded-xl overflow-hidden group">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="clean patient waiting room in a modern medical clinic with soft lighting and comfortable seating"
+                src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/banner-ladco-d.jpg"
+              />
+            </div>
+            <div class="col-span-2 rounded-xl overflow-hidden group relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="medical professional handling specialized laboratory samples with precision"
+                src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/banner-ladco-c.jpg"
+              />
+              <div class="absolute inset-0 bg-primary/10"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-20 px-6">
+        <div
+          class="max-w-5xl mx-auto bg-[#51c3c1] rounded-3xl p-12 text-center text-white relative overflow-hidden"
+        >
+          <div
+            class="pointer-events-none absolute inset-0 z-0 rounded-3xl bg-[url(https://laboratorioladco.com.mx/wp-content/uploads/2026/03/pie.png)] bg-bottom bg-cover bg-no-repeat opacity-[0.35] sm:opacity-40"
+            aria-hidden="true"
+          ></div>
+          <div
+            class="absolute top-0 right-0 z-[1] w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"
+          ></div>
+          <div class="relative z-10">
+            <h2 class="text-4xl font-headline font-extrabold mb-6">
+              ¿No encuentras el estudio que necesitas?
+            </h2>
+            <p class="text-white text-lg mb-10 max-w-2xl mx-auto">
+              Contacta con nuestro equipo concierge para solicitar información sobre estudios
+              especializados o personalizados.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                class="bg-white text-[#000000] px-8 py-4 rounded-lg font-bold shadow-lg active:scale-95 transition-all"
+              >
+                Hablar con un asesor
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t-0 py-12 px-6">
+      <div class="w-full max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="space-y-6">
+          <div class="inline-flex rounded-lg bg-[#51c3c1] px-3 py-2">
+            <img
+              src="https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Ladco-Logotipo-blanco.png"
+              alt="Ladco"
+              class="h-8 w-auto"
+              width="160"
+              height="40"
+            />
+          </div>
+          <h2 class="font-headline text-xl font-bold text-slate-900">
+            ¿Tienes dudas o deseas agendar tu estudio?
+          </h2>
+          <div class="flex flex-col gap-4 text-sm">
+            <a
+              href="tel:+529991916081"
+              class="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+            >
+              <span class="material-symbols-outlined text-xl" aria-hidden="true">call</span>
+              9991 916 081
+            </a>
+            <a
+              href="mailto:atenci%C3%B3n@laboratorioladco.com"
+              class="inline-flex items-center gap-2 text-primary font-semibold hover:underline break-all"
+            >
+              <span class="material-symbols-outlined text-xl" aria-hidden="true">mail</span>
+              atención@laboratorioladco.com
+            </a>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Nuestro equipo está listo para atenderte de forma rápida y amable.
+            <span class="font-semibold text-slate-800">¡Escríbenos!</span>
+          </p>
+        </div>
+        <div class="md:w-fit md:mx-auto">
+          <h5 class="font-headline font-bold text-slate-900 mb-6">Quick Links</h5>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="block text-slate-500 hover:text-blue-600 transition-colors text-sm font-body"
+                href="#"
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a
+                class="block text-slate-500 hover:text-blue-600 transition-colors text-sm font-body"
+                href="#"
+                >Doctores</a
+              >
+            </li>
+            <li>
+              <a
+                class="block text-slate-500 hover:text-blue-600 transition-colors text-sm font-body"
+                href="#"
+                >Resultados</a
+              >
+            </li>
+            <li>
+              <a
+                class="block text-slate-500 hover:text-blue-600 transition-colors text-sm font-body"
+                href="#"
+                >Blogs</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6">
+          <div class="flex gap-2 items-start">
+            <span
+              class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5"
+              aria-hidden="true"
+              >calendar_month</span
+            >
+            <div>
+              <p class="font-headline font-bold text-slate-900 text-sm mb-2">
+                Horarios de atención:
+              </p>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                <span class="block">Lunes a viernes: 7:00 a.m. – 6:00 p.m.</span>
+                <span class="block">Sábado: 7:00 a.m. – 2:00 p.m.</span>
+              </p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed flex gap-2 items-start">
+            <span
+              class="material-symbols-outlined text-primary text-xl shrink-0 mt-0.5"
+              aria-hidden="true"
+              >location_on</span
+            >
+            <span
+              >Calle 42 sur, x 103 y 103-A, colonia Santa Rosa, número 679 y 681., Mérida,
+              Mexico</span
+            >
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-full mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row gap-4 justify-between items-center text-center sm:text-left"
+      >
+        <p class="text-slate-400 text-xs font-label order-2 sm:order-1">
+          © 2026 Laboratorio Ladco. Todos los derechos reservados. / Desarrollado por
+          <a
+            href="https://manurejon.dev/es"
+            target="_blank"
+            class="text-slate-500 hover:text-primary transition-colors"
+            >Manu Dev</a
+          >
+        </p>
+        <nav class="order-1 sm:order-2" aria-label="Legal">
+          <ul
+            class="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs font-label"
+          >
+            <li>
+              <a class="text-slate-500 hover:text-primary transition-colors" href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a class="text-slate-500 hover:text-primary transition-colors" href="#"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- WhatsApp flotante (solo desktop; en móvil va en la barra inferior) -->
+    <a
+      href="https://wa.me/529991916081"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden md:flex fixed bottom-6 right-6 z-40 h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg ring-2 ring-white/90 transition-all hover:bg-[#20bd5a] hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      aria-label="Chatear por WhatsApp con Laboratorio Ladco"
+    >
+      <svg
+        class="h-7 w-7"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.421 1.03 7.396 2.87 1.975 1.84 3.062 4.275 3.061 6.87-.001 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+    </a>
+    <!-- BottomNavBar Mobile -->
+    <div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
+      <div
+        class="bg-white/90 backdrop-blur-xl border border-white shadow-2xl rounded-full px-6 py-4 flex justify-between items-center"
+      >
+        <button class="flex flex-col items-center gap-1 text-primary">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1"
+            >home</span
+          >
+          <span class="text-[10px] font-bold">Inicio</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+          <span class="material-symbols-outlined">medical_services</span>
+          <span class="text-[10px] font-bold">Doctores</span>
+        </button>
+        <a
+          href="#"
+          class="w-12 h-12 bg-[#25D366] hover:bg-[#20bd5a] rounded-full flex items-center justify-center text-white -mt-10 shadow-lg ring-2 ring-white transition-colors"
+          aria-label="WhatsApp"
+        >
+          <svg
+            class="w-7 h-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.421 1.03 7.396 2.87 1.975 1.84 3.062 4.275 3.061 6.87-.001 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+            />
+          </svg>
+        </a>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+          <span class="material-symbols-outlined">assignment_turned_in</span>
+          <span class="text-[10px] font-bold">Resultados</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+          <span class="material-symbols-outlined">article</span>
+          <span class="text-[10px] font-bold">Blog</span>
+        </button>
+      </div>
+    </div>
+    <script type="application/json" id="promo-specials-data">
+      [
+        {
+          "image": "https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-3.png",
+          "imageAlt": "Check-up preventivo familiar",
+          "badge": "Paquete familiar",
+          "title": "Check-up Integral 360°",
+          "description": "Evaluación completa de 45 parámetros para toda la familia. La prevención es el mejor regalo.",
+          "priceLabel": "Precio especial",
+          "price": "$1,499.00",
+          "items": [
+            "45 parámetros clínicos",
+            "Resultados en 24–48 h",
+            "Ideal para toda la familia"
+          ],
+          "ctaLabel": "Solicitar ahora",
+          "ctaHref": "https://wa.me/529991916081?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Check-up%20Integral%20360"
+        },
+        {
+          "image": "https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Perfil-Duo.png",
+          "imageAlt": "Promoción Perfil Duo",
+          "badge": "Promoción",
+          "title": "Perfil Duo",
+          "description": "Combina estudios clave para una visión integral de tu salud en un solo paquete.",
+          "priceLabel": "Desde",
+          "price": "$899.00",
+          "items": [
+            "Química sanguínea y hemograma",
+            "Perfil lipídico básico",
+            "Interpretación orientativa"
+          ],
+          "ctaLabel": "Más información",
+          "ctaHref": "https://wa.me/529991916081?text=Perfil%20Duo"
+        },
+        {
+          "image": "https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Paquetes-Prenatales-1.png",
+          "imageAlt": "Paquetes prenatales",
+          "badge": "Maternidad",
+          "title": "Paquetes prenatales",
+          "description": "Seguimiento pensado para el bienestar de la madre y el desarrollo del bebé.",
+          "priceLabel": "Consultar",
+          "price": "$899.00",
+          "items": ["Perfiles por trimestre", "Toma de muestra con cita", "Resultados en línea"],
+          "ctaLabel": "Agendar valoración",
+          "ctaHref": "https://wa.me/529991916081?text=Paquetes%20prenatales"
+        }
+      ]
+    </script>
+    <script>
+      const track = document.getElementById('carousel-track')
+      const slides = Array.from(track.children)
+      const prevBtn = document.getElementById('prev-btn')
+      const nextBtn = document.getElementById('next-btn')
+      const dotsContainer = document.getElementById('carousel-dots')
+
+      let autoplay
+      let currentGroup = 0
+      let startIndices = [0]
+      const mqMd = window.matchMedia('(min-width: 768px)')
+
+      function getVisibleSlides() {
+        return mqMd.matches ? 3 : 1
+      }
+
+      function computeStartIndices() {
+        const visibleSlides = getVisibleSlides()
+        const maxStart = Math.max(0, slides.length - visibleSlides)
+        const step = visibleSlides
+
+        const indices = []
+        for (let i = 0; i <= maxStart; i += step) indices.push(i)
+        if (indices.length === 0) indices.push(0)
+
+        // Asegura que el último conjunto también se muestre alineado con el final.
+        const last = maxStart
+        if (indices[indices.length - 1] !== last) indices.push(last)
+
+        startIndices = indices
+        currentGroup = Math.min(currentGroup, startIndices.length - 1)
+      }
+
+      function renderDots() {
+        dotsContainer.innerHTML = ''
+        startIndices.forEach((startIndex, groupIndex) => {
+          const dot = document.createElement('button')
+          const isActive = groupIndex === currentGroup
+
+          dot.className =
+            'h-2.5 w-2.5 rounded-full transition ' + (isActive ? 'bg-black' : 'bg-black/20')
+          dot.setAttribute('aria-label', `Ir al conjunto ${groupIndex + 1}`)
+          dot.addEventListener('click', () => {
+            currentGroup = groupIndex
+            updateCarousel()
+            restartAutoplay()
+          })
+
+          dotsContainer.appendChild(dot)
+        })
+      }
+
+      function updateCarousel() {
+        computeStartIndices()
+        const slideWidth = slides[0]?.getBoundingClientRect().width ?? 0
+        const currentStartIndex = startIndices[currentGroup] ?? 0
+
+        track.style.transform = slideWidth
+          ? `translateX(-${currentStartIndex * slideWidth}px)`
+          : 'translateX(0px)'
+        renderDots()
+      }
+
+      function nextGroup() {
+        computeStartIndices()
+        currentGroup = (currentGroup + 1) % startIndices.length
+        updateCarousel()
+      }
+
+      function prevGroup() {
+        computeStartIndices()
+        currentGroup = (currentGroup - 1 + startIndices.length) % startIndices.length
+        updateCarousel()
+      }
+
+      nextBtn.addEventListener('click', () => {
+        nextGroup()
+        restartAutoplay()
+      })
+
+      prevBtn.addEventListener('click', () => {
+        prevGroup()
+        restartAutoplay()
+      })
+
+      function startAutoplay() {
+        autoplay = setInterval(() => {
+          nextGroup()
+        }, 5000)
+      }
+
+      function restartAutoplay() {
+        clearInterval(autoplay)
+        startAutoplay()
+      }
+
+      // Swipe para mobile
+      let startX = 0
+      let endX = 0
+
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX
+      })
+
+      track.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX
+      })
+
+      track.addEventListener('touchend', () => {
+        const diff = startX - endX
+
+        if (diff > 50) {
+          nextGroup()
+          restartAutoplay()
+        } else if (diff < -50) {
+          prevGroup()
+          restartAutoplay()
+        }
+      })
+
+      updateCarousel()
+      startAutoplay()
+      ;(function initHeroPromoCarousel() {
+        const track = document.getElementById('hero-carousel-track')
+        const prevBtn = document.getElementById('hero-prev-btn')
+        const nextBtn = document.getElementById('hero-next-btn')
+        const dotsContainer = document.getElementById('hero-carousel-dots')
+        const section = document.getElementById('hero-promo-section')
+        if (!track || !prevBtn || !nextBtn || !dotsContainer || !section) return
+
+        const slideEls = track.querySelectorAll('[data-hero-slide]')
+        const n = slideEls.length
+        if (n === 0) return
+
+        let idx = 0
+        let autoplayTimer
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+        function applyTransform() {
+          track.style.transform = `translateX(-${(idx * 100) / n}%)`
+        }
+
+        function updateDots() {
+          const buttons = dotsContainer.querySelectorAll('button')
+          buttons.forEach((btn, i) => {
+            const on = i === idx
+            btn.setAttribute('aria-current', on ? 'true' : 'false')
+            btn.className =
+              'h-2 w-2 shrink-0 rounded-full border border-current ' +
+              (on ? 'opacity-100' : 'opacity-40')
+          })
+        }
+
+        function buildDots() {
+          dotsContainer.innerHTML = ''
+          for (let i = 0; i < n; i++) {
+            const b = document.createElement('button')
+            b.type = 'button'
+            b.className = 'h-2.5 w-2.5 rounded-full'
+            b.setAttribute('aria-label', `Ir a la promoción ${i + 1} de ${n}`)
+            b.addEventListener('click', () => {
+              idx = i
+              applyTransform()
+              updateDots()
+              restartAutoplay()
+            })
+            dotsContainer.appendChild(b)
+          }
+          updateDots()
+        }
+
+        function go(delta) {
+          idx = (idx + delta + n) % n
+          applyTransform()
+          updateDots()
+        }
+
+        function startAutoplayHero() {
+          if (reduceMotion || n <= 1) return
+          clearInterval(autoplayTimer)
+          autoplayTimer = setInterval(() => go(1), 6000)
+        }
+
+        function restartAutoplay() {
+          clearInterval(autoplayTimer)
+          startAutoplayHero()
+        }
+
+        prevBtn.addEventListener('click', () => {
+          go(-1)
+          restartAutoplay()
+        })
+        nextBtn.addEventListener('click', () => {
+          go(1)
+          restartAutoplay()
+        })
+
+        section.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault()
+            go(-1)
+            restartAutoplay()
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault()
+            go(1)
+            restartAutoplay()
+          }
+        })
+
+        let hx0 = 0
+        let hx1 = 0
+        section.addEventListener(
+          'touchstart',
+          (e) => {
+            hx0 = hx1 = e.touches[0].clientX
+          },
+          { passive: true },
+        )
+        section.addEventListener(
+          'touchmove',
+          (e) => {
+            hx1 = e.touches[0].clientX
+          },
+          { passive: true },
+        )
+        section.addEventListener('touchend', () => {
+          const d = hx0 - hx1
+          if (Math.abs(d) < 50) return
+          if (d > 0) go(1)
+          else go(-1)
+          restartAutoplay()
+        })
+
+        buildDots()
+        applyTransform()
+        startAutoplayHero()
+      })()
+      ;(function initPromoSpecialsCarousel() {
+        const dataEl = document.getElementById('promo-specials-data')
+        const track = document.getElementById('promo-specials-track')
+        const root = document.getElementById('promo-specials-carousel')
+        const prevBtn = document.getElementById('promo-specials-prev')
+        const nextBtn = document.getElementById('promo-specials-next')
+        const dotsEl = document.getElementById('promo-specials-dots')
+        if (!track || !root || !prevBtn || !nextBtn || !dotsEl) return
+
+        function parseEmbedded() {
+          if (!dataEl || !dataEl.textContent.trim()) return null
+          return JSON.parse(dataEl.textContent.trim())
+        }
+
+        async function loadRows() {
+          try {
+            const res = await fetch('data.json', { cache: 'no-store' })
+            if (res.ok) {
+              const data = await res.json()
+              if (Array.isArray(data) && data.length > 0) return data
+            }
+          } catch (_) {
+            /* file:// o sin servidor */
+          }
+          try {
+            return parseEmbedded()
+          } catch (err) {
+            console.error('promo-specials-data: JSON inválido', err)
+            return null
+          }
+        }
+
+        function esc(s) {
+          const d = document.createElement('div')
+          d.textContent = s == null ? '' : String(s)
+          return d.innerHTML
+        }
+
+        function buildCarousel(rows) {
+          const n = rows.length
+          track.style.width = n * 100 + '%'
+
+          rows.forEach((row) => {
+            const art = document.createElement('article')
+            art.className = 'relative h-full shrink-0 overflow-hidden'
+            art.style.flex = '0 0 ' + 100 / n + '%'
+
+            const listArr = Array.isArray(row.items) ? row.items : []
+            const listHtml = listArr.length
+              ? '<ul class="mb-5 space-y-2 text-sm md:text-base text-white/95" role="list">' +
+                listArr
+                  .map(
+                    (t) =>
+                      '<li class="flex gap-2 items-start">' +
+                      '<span class="material-symbols-outlined text-lg shrink-0 mt-0.5 text-white/90" style="font-variation-settings: \'FILL\' 1" aria-hidden="true">check_circle</span>' +
+                      '<span>' +
+                      esc(t) +
+                      '</span></li>',
+                  )
+                  .join('') +
+                '</ul>'
+              : ''
+
+            art.innerHTML =
+              '<img alt="" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />' +
+              '<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-transparent"></div>' +
+              '<div class="relative z-10 flex h-full min-h-0 items-center px-8 md:px-14 lg:px-20 py-8">' +
+              '<div class="max-w-xl text-white pointer-events-auto">' +
+              (row.badge
+                ? '<span class="inline-block px-3 py-1 bg-tertiary text-white text-xs font-bold rounded mb-3 md:mb-4 uppercase tracking-widest">' +
+                  esc(row.badge) +
+                  '</span>'
+                : '') +
+              '<h3 class="text-2xl md:text-4xl lg:text-5xl font-extrabold font-headline mb-3 md:mb-4 leading-tight">' +
+              esc(row.title || '') +
+              '</h3>' +
+              (row.description
+                ? '<p class="text-base md:text-lg opacity-90 mb-4 md:mb-5 hidden sm:block leading-relaxed">' +
+                  esc(row.description) +
+                  '</p>'
+                : '') +
+              listHtml +
+              '<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2">' +
+              '<div class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-lg border border-white/30 shrink-0">' +
+              '<p class="text-xs uppercase font-bold tracking-tighter opacity-80">' +
+              esc(row.priceLabel || '') +
+              '</p>' +
+              '<p class="text-xl md:text-2xl font-bold">' +
+              esc(row.price || '') +
+              '</p></div>' +
+              '<a class="inline-flex justify-center bg-primary text-white px-6 py-3 md:px-8 rounded-full font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors text-sm md:text-base">' +
+              esc(row.ctaLabel || 'Más información') +
+              '</a>' +
+              '</div></div></div>'
+
+            const img = art.querySelector('img')
+            if (img) {
+              img.src = row.image || ''
+              img.alt = row.imageAlt || row.title || 'Promoción'
+            }
+            const link = art.querySelector('a')
+            if (link) {
+              if (row.ctaHref) {
+                link.href = row.ctaHref
+                link.target = '_blank'
+                link.rel = 'noopener noreferrer'
+              } else {
+                link.href = '#'
+                link.removeAttribute('target')
+                link.removeAttribute('rel')
+              }
+            }
+
+            track.appendChild(art)
+          })
+
+          let idx = 0
+          let autoplayTimer
+
+          function applySlide() {
+            track.style.transform = 'translateX(-' + (idx * 100) / n + '%)'
+            track.querySelectorAll('article').forEach((a, i) => {
+              a.setAttribute('aria-hidden', i !== idx ? 'true' : 'false')
+            })
+            dotsEl.querySelectorAll('button').forEach((b, i) => {
+              b.setAttribute('aria-current', i === idx ? 'true' : 'false')
+              b.className =
+                'h-2 w-2 rounded-full shrink-0 transition ' +
+                (i === idx ? 'bg-white ring-2 ring-white/50' : 'bg-white/40 hover:bg-white/60')
+            })
+          }
+
+          function buildDots() {
+            dotsEl.innerHTML = ''
+            for (let i = 0; i < n; i++) {
+              const b = document.createElement('button')
+              b.type = 'button'
+              b.className = 'h-2 w-2 rounded-full'
+              b.setAttribute('aria-label', 'Ir a la promoción ' + (i + 1) + ' de ' + n)
+              b.addEventListener('click', () => {
+                idx = i
+                applySlide()
+                restartAutoplay()
+              })
+              dotsEl.appendChild(b)
+            }
+          }
+
+          function startAutoplay() {
+            if (n <= 1) return
+            clearInterval(autoplayTimer)
+            autoplayTimer = setInterval(() => {
+              idx = (idx + 1) % n
+              applySlide()
+            }, 8000)
+          }
+
+          function restartAutoplay() {
+            clearInterval(autoplayTimer)
+            startAutoplay()
+          }
+
+          function step(delta) {
+            idx = (idx + delta + n) % n
+            applySlide()
+            restartAutoplay()
+          }
+
+          prevBtn.addEventListener('click', () => step(-1))
+          nextBtn.addEventListener('click', () => step(1))
+
+          root.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault()
+              step(-1)
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault()
+              step(1)
+            }
+          })
+
+          let tx0 = 0
+          let tx1 = 0
+          root.addEventListener(
+            'touchstart',
+            (e) => {
+              tx0 = tx1 = e.touches[0].clientX
+            },
+            { passive: true },
+          )
+          root.addEventListener(
+            'touchmove',
+            (e) => {
+              tx1 = e.touches[0].clientX
+            },
+            { passive: true },
+          )
+          root.addEventListener('touchend', () => {
+            const d = tx0 - tx1
+            if (Math.abs(d) < 50) return
+            if (d > 0) step(1)
+            else step(-1)
+          })
+
+          if (n <= 1) {
+            prevBtn.hidden = true
+            nextBtn.hidden = true
+            dotsEl.hidden = true
+          }
+
+          buildDots()
+          applySlide()
+          startAutoplay()
+        }
+
+        loadRows().then((rows) => {
+          if (!Array.isArray(rows) || rows.length === 0) return
+          buildCarousel(rows)
+        })
+      })()
+      ;(function initBranchMap() {
+        const cards = document.querySelectorAll('.branch-location-card')
+        const iframe = document.getElementById('branch-map-iframe')
+        const heading = document.getElementById('branch-map-name')
+        if (!cards.length || !iframe || !heading) return
+
+        function selectBranch(card) {
+          cards.forEach((c) => {
+            const on = c === card
+            c.setAttribute('aria-pressed', on ? 'true' : 'false')
+            c.classList.toggle('ring-2', on)
+            c.classList.toggle('ring-[#51c3c1]', on)
+            c.classList.toggle('shadow-md', on)
+            c.classList.toggle('border-[#51c3c1]', on)
+            c.classList.toggle('border-outline-variant/10', !on)
+          })
+          iframe.src = card.dataset.mapUrl
+          iframe.title = card.dataset.mapTitle || 'Mapa'
+          heading.textContent = card.dataset.mapHeading || ''
+        }
+
+        cards.forEach((card) => {
+          card.addEventListener('click', () => selectBranch(card))
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              selectBranch(card)
+            }
+          })
+        })
+      })()
+    </script>
+  </body>
+</html>
