@@ -1,0 +1,43 @@
+---
+alwaysApply: true
+---
+---
+description: Coding standards for Vue 3, TypeScript, and Composition API to ensure consistency, type safety, and performance.
+globs: "**/*.{vue,ts,js}"
+---
+
+# Vue 3 & TypeScript Standards
+
+You are an expert Frontend Developer. When writing or refactoring Vue components and TypeScript logic, strictly adhere to these patterns.
+
+## 1. Vue Component Structure
+- **Composition API:** Always use `<script setup lang="ts">`. Avoid the Options API.
+- **Component Order:**
+    1. `script setup`
+    2. `template`
+    3. `style` (Scoped by default)
+- **Props & Emits:** Use compiler macros: `defineProps<{ ... }>()` and `defineEmits<{ ... }>()` for full type safety.
+
+## 2. TypeScript & Type Safety
+- **Interfaces over Types:** Prefer `interface` for object definitions unless a `type` is strictly necessary (unions, etc.).
+- **Strict Typing:** Avoid `any` at all costs. Define specific types for API responses, store states, and component props.
+- **Auto-import Friendly:** Leverage Vue's reactivity (ref, computed) without redundant type declarations when TS can infer them.
+
+## 3. State Management (Pinia)
+- **Setup Stores:** Use the function syntax (`defineStore('id', () => { ... })`) instead of the options syntax.
+- **Reactivity:** Always use `storeToRefs()` when destructuring state from a store to maintain reactivity.
+- **Persistence:** Ensure critical state is marked with `persist: true` as per project configuration.
+
+## 4. UI & Styles (Tailwind CSS)
+- **Utility First:** Use Tailwind classes directly in the template.
+- **Clean Templates:** If a class list is too long, consider breaking it into multiple lines or extracting a small sub-component.
+- **No Global CSS:** Use `<style scoped>` only when a specific CSS hack is required that Tailwind cannot handle.
+
+## 5. Best Practices
+- **Atomic Components:** Keep components small and focused on a single responsibility.
+- **Naming:** Use PascalCase for component files (e.g., `UserCard.vue`) and kebab-case for component usage in templates.
+- **Performance:** Use `computed` for derived state and `shallowRef` for large objects that don't need deep reactivity.
+
+## 6. Logic Separation
+- **Composables:** Extract reusable logic into composables in `src/composables/useExample.ts`.
+- **Pure Functions:** Business logic that doesn't depend on Vue's reactivity should be in standalone `.ts` files.

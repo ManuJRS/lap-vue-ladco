@@ -1,0 +1,52 @@
+---
+alwaysApply: true
+---
+---
+description: Standards and conventions for Git commits to ensure a clean, traceable, and professional history.
+globs: 
+---
+
+# Git Commit Conventions
+
+You are a professional developer who follows strict Git etiquette. Every commit must be atomic, descriptive, and follow the Conventional Commits specification.
+
+## 1. General Rules
+- **Language:** Always use **English** for commit messages.
+- **Atomicity:** Commits must be atomic. One logical change per commit. If a task involves multiple parts (e.g., a Refactor and a New Feature), split them into separate commits.
+- **Mood:** Use the **Imperative Mood** (e.g., "Add feature" instead of "Added feature" or "Adds feature").
+
+## 2. Structure
+The message must follow this structure:
+`type(scope): description`
+
+[Optional Body]
+
+### Types
+- `feat`: A new feature for the user.
+- `fix`: A bug fix.
+- `docs`: Documentation only changes.
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+- `refactor`: A code change that neither fixes a bug nor adds a feature.
+- `perf`: A code change that improves performance.
+- `test`: Adding missing tests or correcting existing tests.
+- `chore`: Changes to the build process or auxiliary tools and libraries.
+
+### Scope (Optional but Recommended)
+The scope should be a noun perceiving a section of the codebase (e.g., `pinia`, `router`, `auth`, `ui-components`).
+
+## 3. Formatting Standards
+- **Subject line:** Max 50 characters. Capitalize the first letter. Do not end with a period.
+- **Body (Optional):** Use if the "why" or "how" needs more context. Wrap at 72 characters.
+- **Footer:** Use for breaking changes or referencing Issue IDs (e.g., `Fixes #123`).
+
+## 4. Examples
+- `feat(auth): add persistent login with pinia-persistedstate`
+- `fix(router): redirect unauthorized users to login page`
+- `refactor(ui): extract Navbar into a standalone component`
+- `style: run prettier on all project files`
+
+## 5. Instructions for Cursor
+Before suggesting a commit or performing a git command:
+1. Review the staged changes to ensure they are **atomic**.
+2. If the changes are too broad, suggest splitting them.
+3. Draft a message that fits the rules above.
