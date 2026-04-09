@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useCarousel } from '@/composables/useCarousel'
+import gsap from 'gsap'
+
+const textRef = ref(null)
+
+onMounted(() => {
+  gsap.from(textRef.value, {
+    filter: "blur(15px)", // Desenfoque inicial
+    opacity: 0,           // Empieza invisible
+    scale: 0.9,           // Un poco más pequeño
+    duration: 2,          // Duración larga para que se aprecie el "enfoque"
+    ease: "power2.out",   // Suavizado de salida
+  })
+})
 
 const flyers = ref([
   { id: 1, src: 'https://laboratorioladco.com.mx/wp-content/uploads/2026/03/Check-up-Ginecologico-2.png', alt: 'Slide 1' },
@@ -35,7 +48,7 @@ const { currentIndex, activeGroup, totalGroups, next, prev, goToGroup, touchEven
   <section class="relative w-full overflow-hidden py-10 md:py-16">
     <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mb-8 sm:mb-10 md:mb-12">
-        <h2 class="mb-3 font-headline text-4xl font-extrabold text-[#51c3c1] tracking-tight sm:mb-4 sm:text-4xl md:text-5xl">
+        <h2 ref="textRef" class="mb-3 font-headline text-4xl font-extrabold text-[#51c3c1] tracking-tight sm:mb-4 sm:text-4xl md:text-5xl">
           Promociones especiales
         </h2>
         <p class="text-base text-on-surface-variant sm:text-lg">
@@ -59,7 +72,9 @@ const { currentIndex, activeGroup, totalGroups, next, prev, goToGroup, touchEven
             class="flex-none flex items-center justify-center transition-all"
             :style="{ width: `${100 / itemsPerGroup}%` }"
           >
-            <div class="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[620px]">
+            <div
+              class="w-full max-w-full md:max-w-[520px] lg:max-w-[620px]"
+            >
               <div class="aspect-[1080/1350] overflow-hidden">
                 <img
                   :src="slide.src"

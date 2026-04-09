@@ -1,8 +1,79 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { RouterLink } from 'vue-router'
+import gsap from 'gsap'
+
+const headerSectionRef = ref<HTMLElement | null>(null)
+const blogListTitleRef = ref<HTMLElement | null>(null)
+
+let headerSectionObserver: IntersectionObserver | null = null
+
+function hideBlogListTitleUntilViewport() {
+  if (!blogListTitleRef.value) return
+  gsap.set(blogListTitleRef.value, {
+    autoAlpha: 0,
+    filter: 'blur(15px)',
+    scale: 0.9,
+  })
+}
+
+function runBlogListTitleReveal() {
+  if (!blogListTitleRef.value) return
+  gsap.fromTo(
+    blogListTitleRef.value,
+    {
+      autoAlpha: 0,
+      filter: 'blur(15px)',
+      scale: 0.9,
+    },
+    {
+      autoAlpha: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 2,
+      ease: 'power2.out',
+    },
+  )
+}
+
+onMounted(async () => {
+  await nextTick()
+  hideBlogListTitleUntilViewport()
+
+  const section = headerSectionRef.value
+  if (!section) return
+
+  headerSectionObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (!entry?.isIntersecting) return
+      runBlogListTitleReveal()
+      headerSectionObserver?.unobserve(section)
+    },
+    {
+      root: null,
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    },
+  )
+  headerSectionObserver.observe(section)
+})
+
+onUnmounted(() => {
+  headerSectionObserver?.disconnect()
+  headerSectionObserver = null
+})
+</script>
+
 <template>
   <div>
-    <header class="max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-8 md:pb-12 lg:py-32">
+    <header
+      ref="headerSectionRef"
+      class="max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-8 md:pb-12 lg:py-32"
+    >
       <h1
-        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-on-surface mb-4 sm:mb-6 break-words"
+        ref="blogListTitleRef"
+        class="invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-on-surface mb-4 sm:mb-6 break-words"
       >
         Editorial Insights
       </h1>
@@ -198,7 +269,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { RouterLink } from 'vue-router'
-</script>

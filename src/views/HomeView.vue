@@ -1,7 +1,70 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import gsap from 'gsap'
 import HeroSection from '@/components/common/HeroSection.vue'
 import PromotionalFlyers from '@/components/common/PromotionalFlyers.vue'
 import BranchLocations from '@/components/common/BranchLocations.vue'
+
+const studiesSectionRef = ref<HTMLElement | null>(null)
+const studiesTitleRef = ref<HTMLElement | null>(null)
+
+let studiesSectionObserver: IntersectionObserver | null = null
+
+function hideStudiesTitleUntilViewport() {
+  if (!studiesTitleRef.value) return
+  gsap.set(studiesTitleRef.value, {
+    autoAlpha: 0,
+    filter: 'blur(15px)',
+    scale: 0.9,
+  })
+}
+
+function runStudiesTitleReveal() {
+  if (!studiesTitleRef.value) return
+  gsap.fromTo(
+    studiesTitleRef.value,
+    {
+      autoAlpha: 0,
+      filter: 'blur(15px)',
+      scale: 0.9,
+    },
+    {
+      autoAlpha: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 2,
+      ease: 'power2.out',
+    },
+  )
+}
+
+onMounted(async () => {
+  await nextTick()
+  hideStudiesTitleUntilViewport()
+
+  const section = studiesSectionRef.value
+  if (!section) return
+
+  studiesSectionObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (!entry?.isIntersecting) return
+      runStudiesTitleReveal()
+      studiesSectionObserver?.unobserve(section)
+    },
+    {
+      root: null,
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    },
+  )
+  studiesSectionObserver.observe(section)
+})
+
+onUnmounted(() => {
+  studiesSectionObserver?.disconnect()
+  studiesSectionObserver = null
+})
 </script>
 
 <template>
@@ -11,7 +74,7 @@ import BranchLocations from '@/components/common/BranchLocations.vue'
     <BranchLocations />
 
     <!-- Promotions Section (Bento Grid / Flyer Style) -->
-    <section class="relative overflow-hidden py-24 bg-surface-container-low px-6">
+    <section ref="studiesSectionRef" class="relative overflow-hidden py-24 bg-surface-container-low px-6">
       <div
         class="pointer-events-none absolute inset-0 overflow-hidden select-none"
         aria-hidden="true"
@@ -30,7 +93,8 @@ import BranchLocations from '@/components/common/BranchLocations.vue'
           >Diagnostic Excellence</span
         >
         <h1
-          class="md:text-5xl text-4xl font-extrabold text-[#51c3c1] font-headline tracking-tight mb-4"
+          ref="studiesTitleRef"
+          class="invisible md:text-5xl text-4xl font-extrabold text-[#51c3c1] font-headline tracking-tight mb-4"
         >
           Realizamos más de 80 estudios clínicos
         </h1>
@@ -173,7 +237,7 @@ import BranchLocations from '@/components/common/BranchLocations.vue'
     </section>
 
     <!-- Datos secction -->
-    <section class="py-24 bg-[#eff7f9]">
+    <section  class="py-24 bg-[#eff7f9]">
       <div class="max-w-7xl mx-auto px-8">
         <div class="grid md:grid-cols-1 gap-6">
           <div
