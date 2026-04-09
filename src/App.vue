@@ -1,11 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+import TheNavbar from '@/components/layout/TheNavbar.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
+import FloatingWhatsApp from '@/components/common/FloatingWhatsApp.vue'
+import LoadingScreen from '@/components/common/LoadingScreen.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p class="text-red-500">
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <LoadingScreen />
+  <TheNavbar />
+  <main class="min-h-screen">
+    <RouterView />
+  </main>
+  <FloatingWhatsApp />
+  <TheFooter />
 </template>
-
-<style scoped></style>
