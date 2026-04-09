@@ -1,14 +1,80 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import gsap from 'gsap'
+
+const headerSectionRef = ref<HTMLElement | null>(null)
+const resultsTitleRef = ref<HTMLElement | null>(null)
+
+let headerSectionObserver: IntersectionObserver | null = null
+
+function hideResultsTitleUntilViewport() {
+  if (!resultsTitleRef.value) return
+  gsap.set(resultsTitleRef.value, {
+    autoAlpha: 0,
+    filter: 'blur(15px)',
+    scale: 0.9,
+  })
+}
+
+function runResultsTitleReveal() {
+  if (!resultsTitleRef.value) return
+  gsap.fromTo(
+    resultsTitleRef.value,
+    {
+      autoAlpha: 0,
+      filter: 'blur(15px)',
+      scale: 0.9,
+    },
+    {
+      autoAlpha: 1,
+      filter: 'blur(0px)',
+      scale: 1,
+      duration: 2,
+      ease: 'power2.out',
+    },
+  )
+}
+
+onMounted(async () => {
+  await nextTick()
+  hideResultsTitleUntilViewport()
+
+  const section = headerSectionRef.value
+  if (!section) return
+
+  headerSectionObserver = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0]
+      if (!entry?.isIntersecting) return
+      runResultsTitleReveal()
+      headerSectionObserver?.unobserve(section)
+    },
+    {
+      root: null,
+      threshold: 0.18,
+      rootMargin: '0px 0px -8% 0px',
+    },
+  )
+  headerSectionObserver.observe(section)
+})
+
+onUnmounted(() => {
+  headerSectionObserver?.disconnect()
+  headerSectionObserver = null
+})
+</script>
 <template>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:py-32 py-16 sm:py-20 pb-16 sm:pb-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:py-32 py-25 sm:py-20 pb-16 sm:pb-20">
     <!-- Header Section -->
-    <header class="mb-10">
+    <header ref="headerSectionRef" class="mb-10">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <span class="text-[#51c3c1] font-bold tracking-widest text-xs uppercase mb-2 block"
             >Portal de Paciente</span
           >
           <h1
-            class="text-4xl md:text-5xl font-extrabold text-on-background tracking-tight mb-2"
+            ref="resultsTitleRef"
+            class="invisible text-4xl md:text-5xl font-extrabold text-on-background tracking-tight mb-2"
           >
             Consultar Resultados
           </h1>
@@ -79,7 +145,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-// Vue Component
-</script>
